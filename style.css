@@ -1,0 +1,21 @@
+div {
+    overflow: hidden;
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+div > p[class|="pane"] {    /* Targets element with the class "pane-" (notice the dash) */
+    box-sizing: border-box;    /* Forces width and height to be at 300px even with padding */
+    padding: 1em;
+    width: 300px;
+    height: 300px;
+}
+    div > p[class*="hidden"] {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        transition: all .25s ease-in-out; /* You might want to add vendor prefixes */
+    }
+        div:hover > p[class*="hidden"] {
+            top: 0;
+        }
